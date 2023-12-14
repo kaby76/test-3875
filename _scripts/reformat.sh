@@ -346,7 +346,7 @@ do
         if [ "$commit" != "" ]
         then
             git add --all
-            git checkin -m "Reformat to coding standard."
+            git commit -m "Reformat to coding standard."
         fi
     fi
 
