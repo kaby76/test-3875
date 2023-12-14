@@ -67,6 +67,7 @@ skipped=""
 grammars=()
 targets=()
 tests=()
+commit=""
 
 # Get "root" of the repo clone.
 cwd=`pwd`
@@ -97,7 +98,7 @@ rm -rf `find . -name 'Generated*' -type d`
 order="grammars"
 additional=()
 antlr4jar=/tmp/antlr4-complete.jar
-while getopts 'aghf' opt; do
+while getopts 'aghfc' opt; do
     case "$opt" in
         a)
             getopts-extra "$@"
@@ -113,6 +114,9 @@ while getopts 'aghf' opt; do
             ;;
         o)
             order="$OPTARG"
+            ;;
+        c)
+            commit=1
             ;;
         f)
             getopts-extra "$@"
@@ -331,14 +335,19 @@ do
     yes=false;
 
     antlr-format *.g4
-	if [ $? -ne 0 ]
-	then
-	    failed=1
-	fi
+        if [ $? -ne 0 ]
+        then
+            failed=1
+        fi
     git diff --exit-code .
     if [ $? -ne 0 ]
     then
         echo "::warning file=$testname,line=0,col=0,endColumn=0::grammar did not conform to the Antlr grammar coding standard format for this repo. Reformatted."
+        if [ "$commit" != "" ]
+        then
+            git add --all
+            git checkin -m "Reformat to coding standard."
+        fi
     fi
 
     popd > /dev/null

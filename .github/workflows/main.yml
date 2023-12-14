@@ -39,7 +39,7 @@ jobs:
           Before="${{github.event.before}}"
           After="${{github.event.after}}"
         fi
-        bash _scripts/reformat.sh -f diff $Before $After
+        bash _scripts/reformat.sh -c -f diff $Before $After
     - name: Push changes
       uses: ad-m/github-push-action@master
       if: github.ref == 'refs/heads/main'
