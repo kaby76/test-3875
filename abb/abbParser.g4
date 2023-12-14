@@ -31,7 +31,7 @@ Star stands for: zero or more
 
 */
 
-module_
+  module_
     : moduleData EOF
     ;
 
