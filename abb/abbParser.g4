@@ -39,7 +39,7 @@ moduleData
     : MODULE moduleName NEWLINE dataList NEWLINE* ENDMODULE
     ;
 
-moduleName
+  moduleName
     : IDENTIFIER
     | procCall
     ;
