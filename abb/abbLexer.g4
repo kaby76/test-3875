@@ -11,7 +11,7 @@ options {
 
  MODULE    : 'module';
 ENDMODULE : 'endmodule';
-PROC      : 'PROC';
+ PROC      : 'PROC';
 ENDPROC   : 'ENDPROC';
 LOCAL     : 'LOCAL';
 CONST     : 'CONST';
