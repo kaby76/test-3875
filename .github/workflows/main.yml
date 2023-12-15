@@ -44,7 +44,7 @@ jobs:
     - name: Commit changes
       # git commit reformatting changes if any, but only if on master branch.
       # If there were no changes, this is a no-op.
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main'
       continue-on-error: false
       shell: bash
       run: |
