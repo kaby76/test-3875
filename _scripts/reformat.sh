@@ -342,9 +342,12 @@ do
     git diff --exit-code .
     if [ $? -ne 0 ]
     then
-        echo "::warning file=$testname,line=0,col=0,endColumn=0::grammar did not conform to the Antlr grammar coding standard format for this repo. Reformatted."
+        echo "::warning file=$testname,line=0,col=0,endColumn=0::grammar did not conform to the Antlr grammar coding standard format for this repo."
         if [ "$commit" != "" ]
         then
+            echo "::warning file=$testname,line=0,col=0,endColumn=0::Checking in reformatted grammar."
+            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
             git add --all
             git commit -m "Reformat to coding standard."
         fi
