@@ -2,16 +2,15 @@
 // $antlr-format allowShortRulesOnASingleLine true, allowShortBlocksOnASingleLine true, minEmptyLines 0, alignSemicolons ownLine
 // $antlr-format alignColons trailing, singleLineOverrulesHangingColon true, alignLexerCommands true, alignLabels true, alignTrailers true
 
-
 lexer grammar abbLexer;
 
 options {
     caseInsensitive = true;
 }
 
- MODULE    : 'module';
+MODULE    : 'module';
 ENDMODULE : 'endmodule';
- PROC      : 'PROC';
+PROC      : 'PROC';
 ENDPROC   : 'ENDPROC';
 LOCAL     : 'LOCAL';
 CONST     : 'CONST';
