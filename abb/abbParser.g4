@@ -31,7 +31,7 @@ Star stands for: zero or more
 
 */
 
-  module_
+module_
     : moduleData EOF
     ;
 
@@ -39,7 +39,7 @@ moduleData
     : MODULE moduleName NEWLINE dataList NEWLINE* ENDMODULE
     ;
 
-  moduleName
+moduleName
     : IDENTIFIER
     | procCall
     ;
