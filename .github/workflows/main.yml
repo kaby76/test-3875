@@ -39,8 +39,11 @@ jobs:
           Before="${{github.event.before}}"
           After="${{github.event.after}}"
         fi
+        # check for bad coding standard in grammar, reformat, and git commit.
         bash _scripts/reformat.sh -c -f diff $Before $After
     - name: Push changes
+      # git push changes to "main" branch.
+      # make sure to uncheck "Require a pull request before merging" in gh actions, "Branches" section.
       uses: ad-m/github-push-action@master
       if: github.ref == 'refs/heads/main'
       continue-on-error: false
