@@ -4,4 +4,3 @@
    <targets>CSharp;Java</targets>
    <inputs>examples/**/*.sys</inputs>
 </desc>
-
