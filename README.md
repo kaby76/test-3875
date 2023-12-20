@@ -1,4 +1,4 @@
-![BS](https://github.com/kaby76/test-3875/workflows/BS/badge.svg)
+![BS](https://github.com/kaby76/test-3875/actions/workflows/main.yml/badge.svg)
 
 # Grammars-v4
 
