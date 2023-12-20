@@ -8,7 +8,7 @@ options {
     caseInsensitive = true;
 }
 
- MODULE    : 'module';
+MODULE    : 'module';
 ENDMODULE : 'endmodule';
 PROC      : 'PROC';
 ENDPROC   : 'ENDPROC';
